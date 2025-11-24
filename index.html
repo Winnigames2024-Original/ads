@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .image-container {
+  width: 500px;
+  height: 300px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Заполнить, сохраняя пропорции */
+}
+
+  </style>
+<head>
+<title>Winnigames2024 | Ads</title>
+</head>
+<body>
+
+<img id="ad" src="./assets/ad1.png" width="500" height="400">
+
+<script>
+  const images = ["./assets/ad1.png", "./assets/ad2.jpg", "./assets/ad3.jpg", "./assets/ad4.jpg", "./assets/ad5.jpg"]; // Массив с путями к изображениям
+  let currentIndex = 0;
+  const imageElement = document.getElementById("ad");
+  const intervalTime = 7000; // 7 секунд в миллисекундах
+
+  setInterval(function() {
+    // Увеличиваем индекс и переходим к первому изображению, если достигли конца массива
+    currentIndex = (currentIndex + 1) % images.length;
+    // Меняем атрибут src изображения
+    imageElement.src = images[currentIndex];
+  }, intervalTime);
+</script>
+
+</body>
+</html>
