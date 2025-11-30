@@ -7,6 +7,14 @@
     });
   </script>
 
+
+  <script>
+    function imgError(image) {
+        image.onerror = "";
+        image.src = "./assets/noimage.gif";
+        return true;
+    }
+  </script>
   
   <style>
     .image-container {
@@ -33,7 +41,7 @@
   </head>
   <body>
 
-<img id="ad" src="./assets/ad1.png" width="500" height="400" draggable="false">
+<img id="ad" src="./assets/ad1.png" width="500" height="400" draggable="false" onerror="imgError(this);">
 
 <script>
   const images = ["./assets/ad1.png", "./assets/ad2.jpg", "./assets/ad3.jpeg", "./assets/ad4.jpg", "./assets/ad5.jpg"]; // Массив с путями к изображениям
